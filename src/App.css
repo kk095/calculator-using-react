@@ -1,3 +1,5 @@
+/* styling to app component  */
+
 .App{
   width: 500px;
     height:600px;
@@ -15,7 +17,7 @@
     bottom: 0;
     left:0;
     right: 0;
-    box-shadow: inset 0px 0px  0px 700px rgba(255, 255, 255, .2);
+    box-shadow: inset 0px 0px  0px 700px rgba(255, 255, 255, .5);
     z-index: -1;
     filter: blur(4px);
 }
@@ -31,7 +33,7 @@ h1{
   align-items: center;
 }
 
-
+/* styling to inputs in which user enter number */
 .result{
   width:100%;
   height:17%;
@@ -47,9 +49,10 @@ h1{
   font-size: 4rem;
   font-weight: bolder;
   letter-spacing: 2.5px;
-  color: white;
   padding-top: 10px;
 }
+
+/* styling to the main calculator part */
 .calculator{
   width: 100%;
   height: 60%;
@@ -96,7 +99,7 @@ sup{
   color: white;
 }
 
-
+/* when screen will less than 600px */
 @media screen and (max-width:600px){
   .App{
       height: 90vh;
@@ -117,6 +120,8 @@ sup{
   }
 }
 
+
+/* when screen is greater than 600px */
 @media screen and (min-width:601px) {
   .calculator .rows .columns:hover{
       background:rgba(255, 255, 255, .3) ;

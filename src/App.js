@@ -2,9 +2,11 @@ import "./App.css";
 import "./animate.css";
 import React from "react";
 
+//class based component
 class App extends React.Component {
   constructor() {
     super();
+    // states of calculator
     this.state = {
       oprand1: null,
       operator: null,
@@ -13,6 +15,7 @@ class App extends React.Component {
     };
   }
 
+  // on clicking any button this will run , for giving animation to buttons
   animation = (e) => {
     e.target.classList.add("animate__bounceIn");
     setTimeout(() => {
@@ -20,6 +23,7 @@ class App extends React.Component {
     }, 500);
   };
 
+  // if clicked on any numbered button, then it will run
   handleNumberClick = (e) => {
     let num = e.target.innerHTML;
     this.animation(e);
@@ -36,6 +40,7 @@ class App extends React.Component {
     });
   };
 
+  // for working CE button, to clear all
   handleClickCE = (e) => {
     this.animation(e);
     this.setState({
@@ -44,6 +49,8 @@ class App extends React.Component {
       current: "0",
     });
   };
+
+  // for working backspace button , to clear last one digit
   handleClickBackSpace = (e) => {
     this.animation(e);
     this.setState((prevState) => {
@@ -67,6 +74,7 @@ class App extends React.Component {
     });
   };
 
+  // for working +/- button, to switch number into positive and negative
   handleSignChange = (e) => {
     this.animation(e);
     this.setState((prevState) => {
@@ -86,6 +94,7 @@ class App extends React.Component {
     });
   };
 
+  // for working decimal . button, to convert number into decimal
   handleDecimalVal = (e) => {
     this.animation(e);
     this.setState((prevState) => {
@@ -101,6 +110,7 @@ class App extends React.Component {
     });
   };
 
+  // when clicked on log button
   handleLOG = (e) => {
     this.animation(e);
     let log = Math.log(this.state.current);
@@ -110,6 +120,7 @@ class App extends React.Component {
     });
   };
 
+  // when clicked on square button
   handleSquare = (e) => {
     this.animation(e);
     let sqr = eval(this.state.current + " " + "*" + " " + this.state.current);
@@ -119,6 +130,7 @@ class App extends React.Component {
     });
   };
 
+  // when clicked on squareroot button
   handleSquareRoot = (e) => {
     this.animation(e);
     let num = Math.sqrt(parseInt(this.state.current));
@@ -127,6 +139,7 @@ class App extends React.Component {
     });
   };
 
+  // when clicked on 1/x button
   handleOneDivide = (e) => {
     this.animation(e);
     let oneDiv = eval("1 / " + this.state.current);
@@ -135,6 +148,7 @@ class App extends React.Component {
     });
   };
 
+  // when clicked on arthmetic operation like -: +,-,*,/
   handleArithmetic = (e) => {
     this.animation(e);
     let opt = e.target.getAttribute("data-val");
@@ -162,6 +176,7 @@ class App extends React.Component {
     }
   };
 
+  // when clicked on equal button
   handleEqual = (e) => {
     this.animation(e);
     if (this.state.oprand1 !== null) {
